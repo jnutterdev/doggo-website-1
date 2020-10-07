@@ -14,7 +14,21 @@ fetch('https://dog.ceo/api/breeds/list')
         });
     })
 
+let dogSelector = document.getElementById("breed-list");
 
+dogSelector.addEventListener("change", function() {
+    let breedName = this.value;
+    fetch(`https://dog.ceo/api/breed/${breedName}/images/random`)
+        .then(function(response) {
+            return response.json();
+        }).then(function(data) {
+            let breedImage = document.createElement('img');
+            breedImage.setAttribute('src', data.message);
+            document.body.appendChild(breedImage);
+
+        })
+
+})
 
 let button = document.getElementById("generate");
 
@@ -28,8 +42,6 @@ button.addEventListener("click", function() {
             let dogImage = document.createElement('img');
             dogImage.setAttribute('src', data.message);
             document.body.appendChild(dogImage);
-            button.innerHTML = "Generate Doggo";
+            button.innerHTML = "Random doggo is a go";
         })
 })
-
-
