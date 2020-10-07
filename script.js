@@ -4,7 +4,7 @@ fetch('https://dog.ceo/api/breeds/list')
     })
     .then(function(data) {
         let breeds = data.message;
-        console.log(breeds);
+        // console.log(breeds);
         let breedList = document.getElementById('breed-list');
         breeds.forEach(function(breed) {
             let breedElement = document.createElement('option');
