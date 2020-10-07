@@ -1,3 +1,13 @@
+fetch('https://dog.ceo/api/breeds/list')
+    .then(function(response) {
+        return response.json();
+    })
+    .then(function(data) {
+        console.log(data);
+    })
+
+
+
 let button = document.getElementById("generate");
 
 button.addEventListener("click", function() {
