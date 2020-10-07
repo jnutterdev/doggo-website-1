@@ -26,6 +26,7 @@ dogSelector.addEventListener("change", function() {
             breedImage.setAttribute('src', data.message);
             document.body.appendChild(breedImage);
 
+
         })
 
 })
